@@ -42,13 +42,30 @@ def display_quiz():
     """
     Displays the question and options on the page
     """
+    # Print the question
     for question in QUESTIONS:
-        # Print the question
         print(question['question'])
-    # Print the options
+        # Print the options
         for key, value in question.items():
             if key.startswith('option'):
                 print(f"{key[6:]}: {value}")
+        get_user_answer()
 
 
+def get_user_answer():
+    """ Get user answer from the options and validate if the answer is right"""
+    while True:
+        try:
+            data_str = int(input("Enter the correct option number: "))
+            if 1 <= data_str <= 3:
+                break
+            else:
+                print("Please enter a valid option number.")
+        except ValueError:
+            print("Please enter a valid option number.")
+        
+
+print("Welcome to the Quiz Game")
+print("Choose the right answer from the options given")
+print("Please enter your answer as 1 ,2 or 3")
 display_quiz()
