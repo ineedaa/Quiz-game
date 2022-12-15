@@ -53,6 +53,7 @@ def display_quiz():
         if key.startswith('option'):
             print(f"{key[6:]}.{value}")
         
+    print("\n")   
     get_user_answer()
 
 def get_user_answer():
@@ -76,14 +77,23 @@ def check_user_answer(data_str):
     if data_str == int(answer[question_index]):
         global score
         score += 1
-        print("Well done !!Correct Answer!")
+        print("Well done !!Correct Answer!\n")
+        print("------------------------------")
     else:
         print("Incorrect Answer")
-        print(f"(The answer is :{int(answer[question_index])}")
+        print(f"The answer is option no:{int(answer[question_index])}")
+        print("---------------------------------------------")
+    question_index += 1
+    display_quiz()
 
-        
-print("Welcome to the Quiz Game")
+
+
+print("\n")
+print("-----------------------------------------------")
+print("Welcome to the Quiz Game!!!")
 print("Choose the right answer from the options given")
-print("Please enter your answer as 1 ,2 or 3")
+print("Please enter your answer as either 1 ,2 or 3")
+print("--------------------------------------------\n")
+
 
 display_quiz()
