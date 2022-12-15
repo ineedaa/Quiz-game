@@ -1,37 +1,37 @@
 """ This variable consists of dictionary of 8 questions in a list."""
 
-QUESTIONS = [{'question': 'What is the capital of France?',
+QUESTIONS = [{'question': 'Q1:What is the capital of France?',
               'option1': 'Paris', 'option2': 'Berlin', 'option3': 'Madrid',
               'correctanswer': '1'},
-             {'question': 'What is the largest ocean in the world?',
+             {'question': 'Q2:What is the largest ocean in the world?',
               'option1': 'Atlantic Ocean', 'option2': 'Pacific Ocean',
               'option3': 'Indian Ocean', 'correctanswer': '2'},
-             {'question': 'What is the capital of Australia?',
+             {'question': 'Q3:What is the capital of Australia?',
               'option1': 'Sydney',
               'option2': 'Canberra',
               'option3': 'Melbourne',
               'correctanswer': '2'},
-             {'question': 'What is the currency of Japan?',
+             {'question': 'Q4:What is the currency of Japan?',
               'option1': 'Dollar',
               'option2': 'Pound',
               'option3': 'Yen',
               'correctanswer': '3'},
-             {'question': 'What is the tallest mountain in the world?',
+             {'question': 'Q5:What is the tallest mountain in the world?',
               'option1': 'K2',
               'option2': 'Mount Everest',
               'option3': 'Lhotse',
               'correctanswer': '2'},
-             {'question': 'What is the most populous city in the world?',
+             {'question': 'Q6:What is the most populous city in the world?',
               'option1': 'Beijing',
               'option2': 'Istanbul',
               'option3': 'Mumbai',
               'correctanswer': '1'},
-             {'question': 'What is the largest planet in the solar system?',
+             {'question': 'Q7:What is the largest planet in the solar system?',
               'option1': 'Earth',
               'option2': 'Mars',
               'option3': 'Jupiter',
               'correctanswer': '3'},
-             {'question': 'What theory explains the origin of universe?',
+             {'question': 'Q8:What theory explains the origin of universe?',
               'option1': 'Evolution',
               'option2': 'General Relativity',
               'option3': 'Big Bang Theory',
@@ -52,9 +52,9 @@ def display_quiz():
     for key, value in question.items():
         if key.startswith('option'):
             print(f"{key[6:]}.{value}")
-        
-    print("\n")   
+    print("\n")
     get_user_answer()
+
 
 def get_user_answer():
     """ Get user answer from the options and validate if the answer is right"""
@@ -77,15 +77,26 @@ def check_user_answer(data_str):
     if data_str == int(answer[question_index]):
         global score
         score += 1
-        print("Well done !!Correct Answer!\n")
-        print("------------------------------")
+        print("\nWell done !!Correct Answer!!")
+        print(f"You scored {score}/8 questions!")
+        print("-------------------------------------------------------\n")
     else:
-        print("Incorrect Answer")
+        print("\nOops!!Incorrect Answer!!!")
         print(f"The answer is option no:{int(answer[question_index])}")
-        print("---------------------------------------------")
+        print("-------------------------------------------------------\n")
     question_index += 1
-    display_quiz()
+    if question_index == (len(QUESTIONS) - 1):
+        display_final_result()
+    else:
+        display_quiz()
 
+
+def display_final_result():
+    """ Displays the final result at the end of the Game"""
+    if score == 8:
+        print(f"Congragulations!!! \n Your final score is {score}/ 8.!!!\n")
+    else:
+        print(f"Your scored {score}/8 questions\nBetter Luck Next Time!!!\n")
 
 
 print("\n")
@@ -93,7 +104,8 @@ print("-----------------------------------------------")
 print("Welcome to the Quiz Game!!!")
 print("Choose the right answer from the options given")
 print("Please enter your answer as either 1 ,2 or 3")
-print("--------------------------------------------\n")
+print("Press 'Enter' after you entered your options")
+print("------------------------------------------------\n")
 
 
 display_quiz()
