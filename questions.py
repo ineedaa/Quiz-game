@@ -1,3 +1,6 @@
+"""The QUESTIONS constant contains a list of dictionaries with questions
+and their three options and the correct answer.its imported to run.py to
+run the quiz game."""
 QUESTIONS = [{'question': 'Q1:What is the capital of France?',
               'option1': 'Paris', 'option2': 'Berlin', 'option3': 'Madrid',
               'correctanswer': '1'},
