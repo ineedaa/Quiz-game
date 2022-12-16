@@ -23,7 +23,7 @@ def get_user_answer():
     """ Get user answer from the options and validate if the answer is right"""
     while True:
         try:
-            data_str = int(input("Enter the correct option number: "))
+            data_str = int(input("Enter the correct option number: \n"))
             # Validate the user answer
             if 1 <= data_str <= 3:
                 break
@@ -68,7 +68,7 @@ def get_user_name():
         print("\n")
         print("-----------------------------------------------")
         print("Welcome to the Quiz Game!!!\n")
-        name = input("Please enter your name: ")
+        name = input("Please enter your name: \n")
         # Check the length of the name
         if len(name) > 8:
             print("Error: Name must be 8 characters or less.")
