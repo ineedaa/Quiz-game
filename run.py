@@ -1,6 +1,7 @@
 """ A regular expression (or RE) ,the functions in this module let you check
     if a particular string matches a given regular expression ."""
 import re
+from colorit import Colors, color
 from questions import QUESTIONS
 
 
@@ -27,10 +28,10 @@ def get_user_answer():
             if 1 <= data_str <= 3:
                 break
             else:
-                print("Please enter a valid option number.")
+                print(color("Please enter a valid option number.", Colors.red))
         # Print the error message if user input is not valid.
         except ValueError:
-            print("Please enter a valid option number.")
+            print(color("Please enter a valid option number.", Colors.red))
     return data_str
 
 
@@ -39,11 +40,11 @@ def check_user_answer(user_answer, question_index):
     answer = [d['correctanswer'] for d in QUESTIONS]
     # Returns True if user answer is correct.
     if user_answer == int(answer[question_index]):
-        print("\nWell done !!Correct Answer!!")
+        print(color("\nWell done !!Correct Answer!!", Colors.green))
         print("-------------------------------------------------------\n")
         return True
     else:
-        print("\nOops!!Incorrect Answer!!!")
+        print(color("\nOops!!Incorrect Answer!!!", Colors.red))
         print(f"The answer is option no:{int(answer[question_index])}")
         print("-------------------------------------------------------\n")
         return False
@@ -53,10 +54,11 @@ def display_final_result(name, score):
     """ Displays the final result at the end of the Game"""
     # Check if user scored 8/8.
     if score == 8:
-        print(f"Congragulations {name.upper()}!!! \nYou scored {score}/8\n")
+        print(color(f"Congratulations {name.upper()}!!! \n\
+You scored {score}/8\n", Colors.yellow))
     else:
-        print(f"{name.upper()} Your total score = {score}/8\n\
-Better Luck Next Time!\n")
+        print(color(f"{name.upper()} Your total score = {score}/8\n\
+Better Luck Next Time!\n", Colors.orange))
 
 
 def get_user_name():
@@ -78,7 +80,7 @@ def get_user_name():
             print("Error: Name cannot be blank.")
         else:
             break
-    print(f"\nHi {name.upper()},Welcome to the Quiz Game!")
+    print(color(f"\nHi {name.upper()},Welcome to the Quiz Game!", Colors.blue))
     return name
 
 
