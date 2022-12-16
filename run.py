@@ -56,7 +56,7 @@ def display_final_result():
                 Better Luck Next Time!\n")
 
 
-def game_instructions():
+
     print("\n")
     print("-----------------------------------------------")
     print("Welcome to the Quiz Game!!!")
