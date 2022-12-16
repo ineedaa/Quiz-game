@@ -21,14 +21,12 @@ Users can play this game on any devices.Each game has 8 general knowledge questi
 
 ## Features
 
-
-
 ### Existing Features
-
 
 #### Start Page
 - The  page displays the welcome message and ask the user to enter the name.
   ![startpage](docs/runprogram.png)
+
 - The user should enter the name as only in alphabets less than 8 characters.
 - If the userenters their name more than 8 cahracters or in numerics,its displays an error message.  
   ![errormessage](docs/errorname.png)
@@ -37,6 +35,7 @@ Users can play this game on any devices.Each game has 8 general knowledge questi
 - After user enters the name,the instructions are displayed before starting the game.
 - The quiz contains the set of one question and three options showed at a time.
   ![displayquestion](docs/displayquestions.png)
+  
 - The user can pick either 1 ,2 ,03 option and press Enter.
 - If the user enters anything other than the three options,user gets an error message.
   ![displayerror](docs/answervalidation.png)]
