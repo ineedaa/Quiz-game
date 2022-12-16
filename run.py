@@ -1,4 +1,4 @@
-from questions.py import QUESTIONS
+from questions import QUESTIONS
 
 score = 0
 question_index = 0
@@ -16,7 +16,6 @@ def display_quiz():
         if key.startswith('option'):
             print(f"{key[6:]}.{value}")
     print("\n")
-    get_user_answer()
 
 
 def get_user_answer():
@@ -30,30 +29,22 @@ def get_user_answer():
                 print("Please enter a valid option number.")
         except ValueError:
             print("Please enter a valid option number.")
-    check_user_answer(data_str)
+    return data_str
 
 
 def check_user_answer(data_str):
     """ Checks the user answer whether its correct or incorrect """
     answer = [d['correctanswer'] for d in QUESTIONS]
-    global question_index
     if data_str == int(answer[question_index]):
-        global score
-        score += 1
         print("\nWell done !!Correct Answer!!")
         print(f"You scored {score}/8 questions!")
         print("-------------------------------------------------------\n")
+        return True
     else:
         print("\nOops!!Incorrect Answer!!!")
         print(f"The answer is option no:{int(answer[question_index])}")
         print("-------------------------------------------------------\n")
-    # Increases the question index by 1.
-    question_index += 1
-    # If list completes the number of questions,it displays the final result to user
-    if question_index == (len(QUESTIONS) - 1):
-        display_final_result()
-    else:
-        display_quiz()
+        return False
 
 
 def display_final_result():
@@ -65,15 +56,33 @@ def display_final_result():
                 Better Luck Next Time!\n")
 
 
-print("\n")
-print("-----------------------------------------------")
-print("Welcome to the Quiz Game!!!")
-name = input('Please enter your name:  ')
-print(f"\nHi {name.upper()}!,welcome to the quiz game!\n")
-print("Choose the right answer from the options given")
-print("Please enter your answer as either 1 ,2 or 3")
-print("Press 'Enter' after you entered your options")
-print("------------------------------------------------\n")
+def game_instructions():
+    print("\n")
+    print("-----------------------------------------------")
+    print("Welcome to the Quiz Game!!!")
+    name = input('Please enter your name:  ')
+    print(f"\nHi {name.upper()}!,welcome to the quiz game!\n")
+    print("Choose the right answer from the options given")
+    print("Please enter your answer as either 1 ,2 or 3")
+    print("Press 'Enter' after you entered your options")
+    print("------------------------------------------------\n")
 
 
-display_quiz()
+def play_quiz():
+    question_index = 0
+    score = 0
+    while question_index < (len(QUESTIONS)):
+        
+        display_quiz(question_index)
+        get_user_answer(question_index)
+        user_answer = get_user_answer(question_index)
+        check_response = check_user_answer(data_str,question_index)
+        if check_response:
+            score += 1
+        question_index += 1
+    display_final_result(question_index)
+        
+
+
+    
+    
