@@ -67,7 +67,7 @@ def get_user_name():
         print("Welcome to the Quiz Game!!!\n")
         name = input("Please enter your name: \n")
         if len(name) >= 8:
-            print(color("Error: Name must be 2 to 8 characters.", Colors.red))
+            print(color("Error:Name must be less than 8 letters.", Colors.red))
         elif not re.match("^[a-zA-Z]*$", name):
             print(color("Error: Name must contain only letters.", Colors.red))
         elif not name:
