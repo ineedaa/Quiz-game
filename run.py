@@ -84,7 +84,9 @@ def check_user_answer(data_str):
         print("\nOops!!Incorrect Answer!!!")
         print(f"The answer is option no:{int(answer[question_index])}")
         print("-------------------------------------------------------\n")
+    # Increases the question index by 1.
     question_index += 1
+    # If list completes the number of questions,it displays the final result to user
     if question_index == (len(QUESTIONS) - 1):
         display_final_result()
     else:
@@ -104,7 +106,7 @@ print("\n")
 print("-----------------------------------------------")
 print("Welcome to the Quiz Game!!!")
 name = input('Please enter your name:  ')
-print(f"\nHi {name.upper()} !,welcome to the quiz game!\n")
+print(f"\nHi {name.upper()}!,welcome to the quiz game!\n")
 print("Choose the right answer from the options given")
 print("Please enter your answer as either 1 ,2 or 3")
 print("Press 'Enter' after you entered your options")
