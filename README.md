@@ -127,7 +127,7 @@ The technology used in this website is :
    - Noted the user name input validation error,when the user is not entering a name or entering numeric characters,its accepted by the system.To fix this error ,a user validation function is created.
 
 ### Supported Browsers
-  - Compatible to Google Chrome.
+  - Compatible with Google Chrome.
   - Used chrome stimulator for testing mobile screens.
 
 ## Deployment
@@ -135,20 +135,20 @@ The technology used in this website is :
 
 ### Heroku
 -  Fork or clone this repository in Github.
--  Createa new Heroku App.
--  Set the buildbacks to Python and NodeJs in that order.
+-  Create a new Heroku App.
+-  Set the build backs to Python and NodeJs in that order.
 -  Link the Heroku app to the repository.
 -  Click on Deploy.
 ### Gitpod 
-- In GitHub repository,click on the Gitpod icon on the right hand side .
+- In the GitHub repository,click on the Gitpod icon on the right-hand side .
 - Within the Gitpod,open the run.py file
-- In terminal,write 'python3 run.py' command.
+- In the terminal,write 'python3 run.py' command.
 - The terminal runs the program.
 
 ## Credits
 
-  - The content  was taken from [Google](https://www.google.com/quiz/).
+  - The content was taken from [Google](https://www.google.com/quiz/).
   - Code Institute for the deployment Terminal.
-  - Fixing my code issues by using [stackoverflow](https://stackoverflow.com/)
-  - Fixed bugs with support of my mentor Rohit Sharma.
+  - Fixing code issues by using [stackoverflow](https://stackoverflow.com/)
+  - Fixed bugs with the support of my mentor Rohit Sharma.
   
