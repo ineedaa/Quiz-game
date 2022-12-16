@@ -94,14 +94,17 @@ def check_user_answer(data_str):
 def display_final_result():
     """ Displays the final result at the end of the Game"""
     if score == 8:
-        print(f"Congragulations!!! \n Your final score is {score}/ 8.!!!\n")
+        print(f"Congragulations {name.upper()}!!! \nYou scored {score}/8\n")
     else:
-        print(f"Your scored {score}/8 questions\nBetter Luck Next Time!!!\n")
+        print(f"{name.upper()} Your total score = {score}/8\n \
+                Better Luck Next Time!\n")
 
 
 print("\n")
 print("-----------------------------------------------")
 print("Welcome to the Quiz Game!!!")
+name = input('Please enter your name:  ')
+print(f"\nHi {name.upper()} !,welcome to the quiz game!\n")
 print("Choose the right answer from the options given")
 print("Please enter your answer as either 1 ,2 or 3")
 print("Press 'Enter' after you entered your options")
